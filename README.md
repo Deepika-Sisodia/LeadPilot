@@ -1,27 +1,58 @@
-# LeadPilot
+# LeadPilot 🚀
+### Lead Prioritization and Data Quality Dashboard
 
-**A Lead Prioritization and Data Quality Dashboard**
+LeadPilot is a full-stack web application designed to help users prioritize business leads and identify data quality issues. It assigns explainable priority scores based on company information and highlights duplicate records and incomplete contact details through a clean, interactive dashboard.
 
-LeadPilot is a full-stack web application that helps users prioritize business leads based on their potential value and identify data-quality issues that may affect lead management.
+## ✨ Features
 
-## Features
+- **Lead Scoring:** Calculates lead priority scores using industry, estimated revenue, employee count, email, and website information.
+- **Explainable Scoring:** Displays a score breakdown so users can understand how each factor contributes to a lead's priority.
+- **Lead Explorer:** Browse, search, filter, and sort leads based on relevant information and priority scores.
+- **Data Quality Checks:** Identifies duplicate company names, missing or invalid email addresses, and missing websites.
+- **Quality Center:** Provides a focused view of records that need attention.
+- **Dashboard Overview:** Displays key metrics, priority distribution, duplicate records, and data health.
+- **CSV Export:** Export lead records for further analysis.
 
-- **Lead Scoring:** Assigns scores using industry, revenue, employee count, email, and website information.
-- **Explainable Scores:** Shows a breakdown of the points awarded for each scoring category.
-- **Data Quality Checks:** Identifies duplicate company records and missing or invalid contact details.
-- **Lead Explorer:** Browse, search, filter, and sort leads.
-- **Quality Center:** Review records that need attention.
-- **CSV Export:** Export lead data for further analysis.
-- **Dashboard Overview:** View lead statistics, score distribution, and data-quality insights.
+## 📸 Screenshots
 
-## Tech Stack
+### Dashboard Overview
 
-- **Frontend:** React, JavaScript, CSS
-- **Backend:** Node.js, Express.js
-- **Data Storage:** JSON-based sample lead data
-- **Tools:** Git, GitHub, Visual Studio Code
+A summary of lead records, average priority score, records needing review, and duplicate records.
 
-## Project Structure
+![LeadPilot Dashboard Overview](screenshots/overview.png)
+
+### Lead Explorer
+
+Search, filter, sort, and compare leads using their company details, priority scores, and data status.
+
+![LeadPilot Lead Explorer](screenshots/lead-explorer.png)
+
+### Quality Center
+
+Identify duplicate records and incomplete or invalid lead information that needs attention.
+
+![LeadPilot Quality Center](screenshots/quality-center.png)
+
+## 🛠️ Tech Stack
+
+**Frontend**
+- React
+- JavaScript
+- CSS
+
+**Backend**
+- Node.js
+- Express.js
+- REST API
+
+**Data Storage**
+- JSON-based sample lead data
+
+**Tools**
+- Git and GitHub
+- Visual Studio Code
+
+## 📂 Project Structure
 
 ```text
 LeadPilot/
@@ -34,28 +65,35 @@ LeadPilot/
 │       ├── App.jsx
 │       ├── App.css
 │       └── index.css
+├── screenshots/
+│   ├── overview.png
+│   ├── lead-explorer.png
+│   └── quality-center.png
 └── README.md
 ```
 
-## Getting Started
+## ⚙️ Getting Started
 
 ### Prerequisites
 
-- Node.js and npm installed
-- Visual Studio Code
+- Node.js and npm
+- Git
+- A code editor such as VS Code
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/Deepika-Sisodia/LeadPilot
+git clone YOUR_GITHUB_REPOSITORY_URL
 cd LeadPilot
 ```
 
-If you already have the project locally, open its folder in VS Code instead.
+Replace `YOUR_GITHUB_REPOSITORY_URL` with your actual GitHub repository URL.
+
+If you already have the project locally, open the existing `LeadPilot` folder in VS Code instead.
 
 ### 2. Start the backend
 
-Open a VS Code terminal:
+Open a terminal in VS Code and run:
 
 ```bash
 cd backend
@@ -63,11 +101,13 @@ npm install
 node server.js
 ```
 
-The backend runs on `http://localhost:5000`.
+The backend runs at:
+
+`http://localhost:5000`
 
 ### 3. Start the frontend
 
-Open a second VS Code terminal:
+Open a **second terminal** in VS Code and run:
 
 ```bash
 cd frontend
@@ -75,43 +115,60 @@ npm install
 npm run dev
 ```
 
-Open the local URL printed by Vite in the terminal.
+Open the local URL printed by Vite in your terminal, usually:
 
-## API Endpoints
+`http://localhost:5173`
 
-| Endpoint | Description |
-|---|---|
-| `GET /api/health` | Checks backend health |
-| `GET /api/leads` | Returns lead records |
-| `GET /api/leads/score` | Returns leads with calculated scores |
-| `GET /api/leads/quality` | Returns data-quality information |
+Keep both terminals running while using the application.
 
-## Lead Scoring
+> If the project does not contain a `package.json` in either folder, follow the existing project setup rather than running `npm install` blindly.
 
-Lead scores are calculated using five factors:
+## 🔌 API Endpoints
 
-- **Industry:** Up to 30 points
-- **Revenue:** Up to 30 points
-- **Employee Count:** Up to 20 points
-- **Email:** Up to 10 points
-- **Website:** Up to 10 points
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/` | Backend welcome response |
+| GET | `/api/health` | Check backend health |
+| GET | `/api/leads` | Retrieve lead records |
+| GET | `/api/leads/score` | Retrieve lead scores and scoring details |
+| GET | `/api/leads/quality` | Retrieve lead data quality information |
 
-The maximum score is 100. The dashboard provides a category-wise breakdown to make the result easier to understand.
+## 🧮 Lead Scoring Logic
 
-## Data Quality
+LeadPilot uses a rule-based scoring system with a maximum score of **100 points**.
 
-The application checks for duplicate company names, missing or invalid email addresses, and missing websites. Records with detected issues can be reviewed in the Quality Center.
+| Factor | Maximum Points |
+|---|---:|
+| Industry | 30 |
+| Estimated Revenue | 30 |
+| Employee Count | 20 |
+| Email Availability and Validity | 10 |
+| Website Availability | 10 |
+| **Total** | **100** |
 
-The current dataset contains sample records. Email addresses and websites using the `.example` domain are placeholders, not verified business contacts.
+The score is calculated using predefined rules rather than a machine learning model. The breakdown helps users understand why a lead receives a particular priority score.
 
-## Future Improvements
+## 🧹 Data Quality Checks
 
-- Integrate a real CRM or lead data source.
-- Add persistent database storage.
-- Support configurable scoring weights.
-- Add authentication and role-based access.
-- Introduce automated tests and more data validation rules.
+The application checks lead records for:
+- Duplicate company names
+- Missing or invalid email addresses
+- Missing website information
 
-## Author
+These checks help users identify records that may need correction before further use.
 
-Built as a full-stack project focused on lead prioritization, explainable scoring, and data quality.
+## 📌 Current Scope
+
+LeadPilot currently uses sample lead data stored in a JSON file. It is intended as a demonstration of lead prioritization, explainable scoring, and data quality management. Sample contact details should not be treated as verified business contacts.
+
+## 🚀 Future Improvements
+
+- Integrate a database for persistent storage
+- Add configurable scoring rules and weights
+- Integrate external CRM systems
+- Introduce authentication and role-based access
+- Add automated testing and more comprehensive data validation
+
+## 👩‍💻 About
+
+LeadPilot is a full-stack project focused on making lead management more organized, transparent, and actionable through explainable scoring and data quality checks.

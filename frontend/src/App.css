@@ -208,7 +208,7 @@ select:focus-visible {
 
   font-weight: 600;
 
-  transition: *background* 160ms, color 160ms;
+  transition: background 160ms, color 160ms;
 
 }
 
@@ -580,7 +580,7 @@ select:focus-visible {
 
   font-weight: 600;
 
-  transition: *background* 150ms, transform 150ms;
+  transition: background 150ms, transform 150ms;
 
 }
 
@@ -1354,7 +1354,7 @@ td {
 
 tbody tr {
 
-  transition: *background* 130ms;
+  transition: background 130ms;
 
 }
 
