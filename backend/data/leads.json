@@ -1,0 +1,57 @@
+
+[
+  {
+    "id": 1,
+    "companyName": "Northstar Technologies",
+    "industry": "Technology",
+    "revenue": 8500000,
+    "employees": 250,
+    "email": "contact@northstar.example",
+    "website": "https://northstar.example"
+  },
+  {
+    "id": 2,
+    "companyName": "Greenfield Foods",
+    "industry": "Food",
+    "revenue": 1200000,
+    "employees": 45,
+    "email": "hello@greenfield.example",
+    "website": "https://greenfield.example"
+  },
+  {
+    "id": 3,
+    "companyName": "BluePeak Systems",
+    "industry": "Technology",
+    "revenue": 6200000,
+    "employees": 180,
+    "email": "sales@bluepeak.example",
+    "website": "https://bluepeak.example"
+  },
+  {
+    "id": 4,
+    "companyName": "UrbanNest",
+    "industry": "Real Estate",
+    "revenue": 900000,
+    "employees": 30,
+    "email": "",
+    "website": "https://urbannest.example"
+  },
+  {
+    "id": 5,
+    "companyName": "Northstar Technologies",
+    "industry": "Technology",
+    "revenue": 8500000,
+    "employees": 250,
+    "email": "contact@northstar.example",
+    "website": "https://northstar.example"
+  },
+  {
+    "id": 6,
+    "companyName": "BrightPath Consulting",
+    "industry": "Consulting",
+    "revenue": 2100000,
+    "employees": 75,
+    "email": "invalid-email",
+    "website": ""
+  }
+]
