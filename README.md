@@ -3,6 +3,14 @@
 
 LeadPilot is a full-stack web application designed to help users prioritize business leads and identify data quality issues. It assigns explainable priority scores based on company information and highlights duplicate records and incomplete contact details through a clean, interactive dashboard.
 
+## 🌐 Live Demo
+
+**Try LeadPilot:** [https://lead-pilot-three.vercel.app/](https://lead-pilot-three.vercel.app/)
+
+**Backend API:** [https://leadpilot-vfnn.onrender.com/](https://leadpilot-vfnn.onrender.com/)
+
+**API Health Check:** [https://leadpilot-vfnn.onrender.com/api/health](https://leadpilot-vfnn.onrender.com/api/health)
+
 ## ✨ Features
 
 - **Lead Scoring:** Calculates lead priority scores using industry, estimated revenue, employee count, email, and website information.
@@ -39,6 +47,7 @@ Identify duplicate records and incomplete or invalid lead information that needs
 - React
 - JavaScript
 - CSS
+- Vite
 
 **Backend**
 - Node.js
@@ -47,6 +56,10 @@ Identify duplicate records and incomplete or invalid lead information that needs
 
 **Data Storage**
 - JSON-based sample lead data
+
+**Deployment**
+- Vercel (Frontend)
+- Render (Backend)
 
 **Tools**
 - Git and GitHub
@@ -59,12 +72,14 @@ LeadPilot/
 ├── backend/
 │   ├── data/
 │   │   └── leads.json
+│   ├── package.json
 │   └── server.js
 ├── frontend/
-│   └── src/
-│       ├── App.jsx
-│       ├── App.css
-│       └── index.css
+│   ├── src/
+│   │   ├── App.jsx
+│   │   ├── App.css
+│   │   └── index.css
+│   └── package.json
 ├── screenshots/
 │   ├── overview.png
 │   ├── lead-explorer.png
@@ -101,7 +116,7 @@ npm install
 node server.js
 ```
 
-The backend runs at:
+The backend runs locally at:
 
 `http://localhost:5000`
 
@@ -121,7 +136,7 @@ Open the local URL printed by Vite in your terminal, usually:
 
 Keep both terminals running while using the application.
 
-> If the project does not contain a `package.json` in either folder, follow the existing project setup rather than running `npm install` blindly.
+For local development, the frontend uses the local backend by default. To connect it to a different API, configure the `VITE_API_BASE_URL` environment variable before starting or building the frontend.
 
 ## 🔌 API Endpoints
 
@@ -151,6 +166,7 @@ The score is calculated using predefined rules rather than a machine learning mo
 ## 🧹 Data Quality Checks
 
 The application checks lead records for:
+
 - Duplicate company names
 - Missing or invalid email addresses
 - Missing website information
